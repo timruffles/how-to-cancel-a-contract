@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET'])
 def index():
-  host = request.host.split(":")[1]
+  host = request.host.split(":")[0]
   if host == "how-to-cancel-a-contract.co.uk":
     return index_generic()
   else:
