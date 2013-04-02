@@ -3,7 +3,7 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def index():
   host = request.host.split(":")[1]
   if host == "how-to-cancel-a-contract.co.uk":
@@ -11,7 +11,7 @@ def index():
   else:
     return index_three()
 
-@app.route('/done')
+@app.route('/done',methods=['GET'])
 def done():
   return render_template("done.html")
 
@@ -24,5 +24,6 @@ def index_three():
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
-    app.debug = True
+    if os.environ.get("DEBUG"):
+      app.debug = True
     app.run(host='0.0.0.0', port=port)
