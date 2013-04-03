@@ -10,6 +10,8 @@ def index():
   host = request.host.split(":")[0]
   if host == "how-to-cancel-a-contract.co.uk":
     return index_generic()
+  elif host == "justbloodycancel.co.uk":
+    return index_brand()
   else:
     return index_three()
 
@@ -17,11 +19,16 @@ def index():
 def done():
   return render_template("done.html")
 
+def index_brand():
+  title = "Just Bloody Cancel - cancel your contract online!"
+  return render_template("brand.html",title=title)
+  
+
 def index_generic():
   return render_template("generic.html",title="How to cancel a contract")
 
 def index_three():
-  return render_template("three.html",title="How to cancel a contract")
+  return render_template("three.html",title="Cancel your Three Mobile contract")
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
