@@ -16,19 +16,18 @@ def index():
     return index_three()
 
 
-
 @app.route('/done',methods=['GET'])
 def done():
-  return render_template("done.html")
+  return render_template("done.html",contract="generic",contentClass="generic",title="You're almost done!")
 
 # for localhosting
-@app.route('/index_brand', methods=['GET'])
+@app.route('/who-are-we', methods=['GET'])
 def index_brand():
   title = "Just Bloody Cancel - cancel your contract online!"
-  return render_template("brand.html",title=title)
+  return render_template("brand.html",title=title,contentClass="generic")
 
 
-@app.route('/index_generic', methods=['GET'])
+@app.route('/how-to-cancel-a-contract', methods=['GET'])
 def index_generic():
   return render_template("generic.html",\
           title="How to cancel a contract",\
