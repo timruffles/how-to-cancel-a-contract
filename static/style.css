@@ -1,0 +1,21 @@
+/*
+Errno::ENOENT: No such file or directory - build/sass/style.sass
+
+Backtrace:
+/usr/local/share/gems/gems/sass-3.2.5/lib/sass/plugin/compiler.rb:339:in `read'
+/usr/local/share/gems/gems/sass-3.2.5/lib/sass/plugin/compiler.rb:339:in `update_stylesheet'
+/usr/local/share/gems/gems/sass-3.2.5/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/usr/local/share/gems/gems/sass-3.2.5/lib/sass/plugin/compiler.rb:201:in `each'
+/usr/local/share/gems/gems/sass-3.2.5/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/usr/local/share/gems/gems/sass-3.2.5/lib/sass/plugin/compiler.rb:299:in `block in watch'
+/usr/local/share/gems/gems/sass-3.2.5/vendor/listen/lib/listen/multi_listener.rb:86:in `call'
+/usr/local/share/gems/gems/sass-3.2.5/vendor/listen/lib/listen/multi_listener.rb:86:in `on_change'
+/usr/local/share/gems/gems/sass-3.2.5/vendor/listen/lib/listen/multi_listener.rb:95:in `block in initialize_adapter'
+/usr/local/share/gems/gems/sass-3.2.5/vendor/listen/lib/listen/adapters/polling.rb:55:in `call'
+/usr/local/share/gems/gems/sass-3.2.5/vendor/listen/lib/listen/adapters/polling.rb:55:in `poll'
+/usr/local/share/gems/gems/sass-3.2.5/vendor/listen/lib/listen/adapters/polling.rb:31:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory - build/sass/style.sass"; }

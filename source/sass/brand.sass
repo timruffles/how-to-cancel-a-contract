@@ -1,0 +1,116 @@
+
+
+// styles for generic page
+.three
+  a
+    color: $threeLink
+  h1, .headerRow
+    width: 45em
+    max-width: 1070px
+
+  h1
+    @include title
+    font-size: 300%
+    margin-bottom: 0.7em
+    margin-top: 0.3em
+  .header
+    background: $three
+    padding-bottom: 0
+    .content
+  .page
+    background: $headerTitles
+  .headerRow
+    overflow: auto
+    position: relative
+    margin: 1em auto
+    min-height: 340px
+    .content
+      @include headerContent
+      padding: 100px 0 30px 290px
+      margin: 10px
+      margin-left: 60px
+      display: inline-block
+      width: 15em
+      a
+        margin: 30px 0px
+        border: 3px solid $headerTitles
+        background: $headerTitles
+        color: $three
+        text-decoration: none
+        padding: 8px 12px
+        display: inline-block
+        &:hover
+          background: $three
+          color: $headerTitles
+
+    .illustration
+      position: absolute
+      bottom: 0px
+      left: 0px
+      height: 336px
+      width: 308px
+      background: url(images/manAngryPhone.png) no-repeat bottom center
+  .row
+    margin: 5em auto
+    color: $bodyText
+    text-align: center
+    @include content
+    .illustration
+      position: absolute
+      left: 0px
+      width: 400px
+    .container
+      position: relative
+      width: 45em
+      max-width: 1070px
+    .content
+      margin-left: 355px
+      text-align: left
+      max-width: 21em
+      li
+        list-style-type: square
+    strong
+      font-weight: normal
+      font-size: 120%
+    h3
+      margin: 1em auto
+      @include sub
+    &.whatYouGet
+      background: $contrastRow
+      color: $headerTitles
+      .container
+        min-height: 300px
+      .illustration
+        height: 300px
+        bottom: 20px
+        background: url(images/coins.png) no-repeat center center
+    .payForm
+      @include formFont
+      h3
+        color: $three
+      width: 21em
+      margin: 40px auto
+      .formRow
+        margin: 10px
+        position: relative
+        overflow: auto
+        label
+          float: left
+        input
+          float: right
+      label
+        color: $threeLink
+      input[type=text]
+        border: 3px solid $footer
+        padding: 3px 8px
+        color: $contrastRow
+    .payButton
+      margin: 68px auto 0px
+      background: $three
+      text-align: center
+      width: 380px
+      padding: 10px
+      height: 40px
+
+
+

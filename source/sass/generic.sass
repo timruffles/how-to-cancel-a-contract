@@ -1,0 +1,67 @@
+
+
+// styles for generic page
+.generic
+  a
+    color: $cancelLink
+  .header
+    background: $cancelContract
+  h1
+    @include title
+    margin-bottom: 0.7em
+    margin-top: 0.3em
+  .page
+    background: $headerTitles
+  .banners
+    position: relative
+    overflow: auto
+    line-height: 290px
+    height: 290px
+    @include title
+    i
+      width: 295px
+      height: 285px
+      display: block
+    .noPhone
+      margin-right: 125px
+      float: right
+      background: url(images/noPhone.png) center center no-repeat
+    .noContract
+      margin-left: 125px
+      float: left
+      background: url(images/noContract.png) center center no-repeat
+  .main
+    color: $bodyText
+    text-align: center
+    @include content
+    .content
+      text-align: justify
+      max-width: 35em
+    strong
+      font-weight: normal
+      font-size: 120%
+    h3
+      margin: 1em auto
+      @include sub
+  .services
+    position: relative
+    a
+      display: block
+      margin: 2em auto
+      width: 15em
+      padding: 10px 30px
+      text-align: center
+      color: $headerTitles
+      text-decoration: none
+      border: 2px solid $headerTitles
+      background: $cancelContract
+      &:hover
+        border: 2px solid $cancelContract
+        background: $headerTitles
+        color: $cancelContract
+
+html
+  font-size: 16px
+@media screen and (min-width: 1400px)
+  html
+    font-size: 18px

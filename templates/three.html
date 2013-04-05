@@ -1,5 +1,80 @@
 {% extends "layout.html" %}
 {% block body %}
-  <h2>How to cancel a three contract</h2>
+<div class="header">
+  <h1>{{ banner }}</h1>
+  <div class="headerRow">
+    <div class="illustration">
+    </div>
+    <div class="content">
+      Don't waste time and money trying
+      to cancel your Three mobile contract
+      by phone.
+      <a href="#pay">Let us do it for you</a>
+    </div>
+  </div>
+
+</div>
+<div class="row whyPhone">
+  <div class="container">
+    <div class="illustration">
+    </div>
+    <div class="content">
+      Mobile phone companies want you to cancel
+      by phone because:
+      <ul>
+        <li>they can persuade you to
+        change your mind</li>
+        <li>they can sell you other
+        products &amp; services</li>
+        <li>people often give up when waiting
+        in a call queue</li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <div class="row whatYouGet">
+    <div class="container">
+      <div class="illustration"></div>
+      <div class="content">
+        <h2>for <strong>&pound;{{ price }}</strong></h2>
+        <ul>
+          <li>you digitally sign a pdf cancellation
+          letter</li>
+          <li>we send it to Three by post</li>
+          <li>you get a copy of the pdf
+          and the Royal Mail recorded delivery number
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+   <div class="row payNow" id="pay">
+     <div class="payForm">
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <h3>JUST &pound; {{ price }} </h3>
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="on0" value="Mobile Number">
+    <div class="formRow">
+      <label name="os0">Mobile Number</label>
+      <input type="text" name="os0" maxlength="200">
+    </div>
+    <div class="formRow">
+      <input type="hidden" name="on1" value="Contract Number">
+      <label name="os1">Contract Number</label>
+      <input type="text" name="os1" maxlength="200">
+    </div>
+    {% include 'paypalEncrypted.html' %}
+    <div class="payButton">
+      <input type="image" src="/static/images/payNow.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+  </div>
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+    </form>
+     </div>
+   </div>
+
+  </div>
+</div>
+
 {% endblock %}
 

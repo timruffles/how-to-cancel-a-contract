@@ -1,13 +1,31 @@
 {% extends "layout.html" %}
 {% block body %}
-  <h1>Cancel anything</h1>
-
-
-  <p>We want to help you cancel anything. We've started out with three mobile as they're particuarily annoying to cancel. <a href="mailto:iwanttocancel@justbloodycancel.co.uk">Let us know</a> if you want to cancel a service from a different company, or <a href="http://twitter.com/justbloodycancel">Tweet us</a>.
-
-  <div class="services">
-    <a href="/cancel-three-mobile-contract">Three mobile</a>
+  <div class="header">
+    <h1>{{ banner }}</h1>
+    <div class="banners">
+      <i class="noContract"></i>+<i class="noPhone"></i>
+    </div>
   </div>
 
+  <div class="main">
+
+    <h3>We want to help you cancel anything.</h3>
+    <div class="content">
+      <strong>We've started out with three mobile as they make
+        cancelling particularly annoying.
+      </strong>
+      <p>
+
+      <a href="mailto:iwanttocancel@justbloodycancel.co.uk">Let us know</a>
+      if you want to cancel a service from a different company,
+      or <a href="http://twitter.com/justbloodycancel">Tweet us</a>.
+      </p>
+
+    </div>
+    <div class="services">
+      <a href="/cancel-three-mobile-contract">Three mobile</a>
+    </div>
+
+  </div>
 
 {% endblock %}

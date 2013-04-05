@@ -15,20 +15,33 @@ def index():
   else:
     return index_three()
 
+
+
 @app.route('/done',methods=['GET'])
 def done():
   return render_template("done.html")
 
+# for localhosting
+@app.route('/index_brand', methods=['GET'])
 def index_brand():
   title = "Just Bloody Cancel - cancel your contract online!"
   return render_template("brand.html",title=title)
-  
 
+
+@app.route('/index_generic', methods=['GET'])
 def index_generic():
-  return render_template("generic.html",title="How to cancel a contract")
+  return render_template("generic.html",\
+          title="How to cancel a contract",\
+          contentClass="generic",\
+          banner="Cancel A Contract")
 
+@app.route('/cancel-three-mobile-contract', methods=['GET'])
 def index_three():
-  return render_template("three.html",title="Cancel your Three Mobile contract")
+  return render_template("three.html",\
+          title="Cancel your Three Mobile contract",\
+          contentClass="three",\
+          banner="How to cancel a three contract",\
+          price="3.50")
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
