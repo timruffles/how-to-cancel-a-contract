@@ -13,35 +13,50 @@ def index():
     return index_generic()
   elif host == "justbloodycancel.co.uk":
     return index_brand()
+  elif host == "three-cancellation.co.uk":
+    return index_three_cancellation()
   else:
-    return index_three()
+    return index_three_contract()
 
+def debug_route(decorator,fn):
+  if os.environ.get("DEBUG"):
+       # Return the function unchanged, not decorated.
+       return decorator(fn)
+  return fn
 
-@app.route('/done',methods=['GET'])
 def done():
   return render_template("done.html",contract="generic",contentClass="generic",title="You're almost done!")
+debug_route(app.route('/done',methods=['GET']), done)
 
 # for localhosting
-@app.route('/who-are-we', methods=['GET'])
 def index_brand():
   title = "Just Bloody Cancel - cancel your contract online!"
   return render_template("brand.html",title=title,contentClass="generic")
+debug_route(app.route('/brand', methods=['GET']),index_brand)
 
-
-@app.route('/how-to-cancel-a-contract', methods=['GET'])
 def index_generic():
   return render_template("generic.html",\
           title="How to cancel a contract",\
           contentClass="generic",\
           banner="Cancel A Contract")
+debug_route(app.route('/how-to-cancel-a-contract', methods=['GET']),index_generic)
 
-@app.route('/cancel-three-mobile-contract', methods=['GET'])
-def index_three():
-  return render_template("three.html",\
-          title="Cancel your Three Mobile contract",\
-          contentClass="three",\
-          banner="How to cancel a three contract",\
-          price="3.50")
+def index_three_cancellation():
+  return index_three(title="Three cancellation made easy",\
+        contentClass="three",\
+        banner="Three cancellation online",\
+        price="3.50")
+debug_route(app.route('/three_cancel', methods=['GET']),index_three_cancellation)
+
+def index_three_contract():
+  return index_three(title="Cancel your Three Mobile contract",\
+        contentClass="three",\
+        banner="How to cancel a three contract",\
+        price="3.50")
+debug_route(app.route('/three_contract', methods=['GET']),index_three_contract)
+
+def index_three(**kwargs):
+  return render_template("three.html",**kwargs)
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
