@@ -13,8 +13,6 @@ def index():
     return index_generic()
   elif host == "justbloodycancel.co.uk":
     return index_brand()
-  elif host == "three-cancellation.co.uk":
-    return index_three_cancellation()
   else:
     return index_three_contract()
 
@@ -24,9 +22,9 @@ def debug_route(decorator,fn):
        return decorator(fn)
   return fn
 
+@app.route('/done',methods=['GET'])
 def done():
   return render_template("done.html",contract="generic",contentClass="generic",title="You're almost done!")
-debug_route(app.route('/done',methods=['GET']), done)
 
 # for localhosting
 def index_brand():
@@ -41,19 +39,13 @@ def index_generic():
           banner="Cancel A Contract")
 debug_route(app.route('/how-to-cancel-a-contract', methods=['GET']),index_generic)
 
-def index_three_cancellation():
-  return index_three(title="Three cancellation made easy",\
-        contentClass="three",\
-        banner="Three cancellation online",\
-        price="3.50")
-debug_route(app.route('/three_cancel', methods=['GET']),index_three_cancellation)
 
+@app.route('/cancel-three-mobile-contract', methods=['GET'])
 def index_three_contract():
   return index_three(title="Cancel your Three Mobile contract",\
         contentClass="three",\
         banner="How to cancel a three contract",\
         price="3.50")
-debug_route(app.route('/three_contract', methods=['GET']),index_three_contract)
 
 def index_three(**kwargs):
   return render_template("three.html",**kwargs)
