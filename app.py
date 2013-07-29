@@ -45,7 +45,7 @@ def index_three_contract():
   return index_three(title="Cancel your Three Mobile contract",\
         contentClass="three",\
         banner="How to cancel a three contract",\
-        price="3.50")
+        price="5.00")
 
 def index_three(**kwargs):
   return render_template("three.html",**kwargs)
